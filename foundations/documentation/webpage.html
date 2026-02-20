@@ -1,0 +1,117 @@
+<h1 id="how-a-url-becomes-a-webpage">How a URL Becomes a Webpage</h1>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>This document explains how a website loads when you type a URL in a
+browser.<br />
+It is written for beginners who want to understand what happens behind
+the scenes on the internet.</p>
+<p>You will learn how browsers, servers, DNS, and databases work
+together to display a webpage.</p>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p><strong>Audience:</strong> Beginners learning web development<br />
+<strong>Goal:</strong> Understand the request-response cycle<br />
+<strong>Prerequisites:</strong> Basic idea of browser and internet</p>
+<p>This guide explains the full journey from typing a URL to seeing a
+webpage.</p>
+<hr />
+<h2 id="background">Background</h2>
+<p>Many people use the web daily but don’t know how it works internally.
+Understanding this process helps developers:</p>
+<ul>
+<li>debug issues</li>
+<li>improve performance</li>
+<li>design systems</li>
+<li>prepare for interviews</li>
+</ul>
+<p>Web communication follows a structured client-server model.</p>
+<hr />
+<h2 id="elaboration-step-by-step-process">Elaboration — Step-by-Step
+Process</h2>
+<h3 id="step-1-url-entered">Step 1 — URL Entered</h3>
+<p>User types:</p>
+<pre><code>https://example.com</code></pre>
+<p>Browser extracts:</p>
+<ul>
+<li>protocol</li>
+<li>domain</li>
+<li>path</li>
+</ul>
+<hr />
+<h3 id="step-2-dns-lookup">Step 2 — DNS Lookup</h3>
+<p>Browser asks DNS server:</p>
+<blockquote>
+<p>“What is the IP address of this domain?”</p>
+</blockquote>
+<p>DNS replies with an IP address.</p>
+<hr />
+<h3 id="step-3-server-connection">Step 3 — Server Connection</h3>
+<p>Browser connects to that IP address using TCP + HTTPS.</p>
+<hr />
+<h3 id="step-4-http-request-sent">Step 4 — HTTP Request Sent</h3>
+<pre class="http"><code>GET / HTTP/1.1
+Host: example.com</code></pre>
+<hr />
+<h3 id="step-5-server-processing">Step 5 — Server Processing</h3>
+<p>Server may:</p>
+<ul>
+<li>run backend code</li>
+<li>query database</li>
+<li>call APIs</li>
+</ul>
+<hr />
+<h3 id="step-6-response-returned">Step 6 — Response Returned</h3>
+<p>Server sends:</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Images</li>
+</ul>
+<hr />
+<h3 id="step-7-browser-rendering">Step 7 — Browser Rendering</h3>
+<p>Browser:</p>
+<ul>
+<li>builds DOM</li>
+<li>applies CSS</li>
+<li>runs JavaScript</li>
+<li>paints pixels</li>
+</ul>
+<p>User sees webpage.</p>
+<hr />
+<h2 id="diagram-request-flow">Diagram — Request Flow</h2>
+<pre class="mermaid"><code>sequenceDiagram
+Browser-&gt;&gt;DNS: Request IP
+DNS--&gt;&gt;Browser: IP address
+Browser-&gt;&gt;Server: HTTP request
+Server--&gt;&gt;Browser: HTML response</code></pre>
+<hr />
+<h2 id="diagram-architecture">Diagram — Architecture</h2>
+<pre class="mermaid"><code>graph LR
+Browser --&gt; Server
+Server --&gt; Database
+Server --&gt; API</code></pre>
+<hr />
+<h2 id="mindmap">Mindmap</h2>
+<figure>
+<img
+src="/girish-saana-fullstack/foundations/documentation/How%20a%20login%20system%20works.png"
+alt="Mindmap" />
+<figcaption aria-hidden="true">Mindmap</figcaption>
+</figure>
+<hr />
+<h2 id="ending">Ending</h2>
+<p>We learned how a URL becomes a webpage by traveling through multiple
+systems including DNS, servers, and databases.</p>
+<p>The internet works through structured communication between clients
+and servers.</p>
+<hr />
+<h2 id="what-to-learn-next">What to Learn Next</h2>
+<p>To deepen your understanding, explore:</p>
+<ul>
+<li>HTTP headers</li>
+<li>caching</li>
+<li>CDNs</li>
+<li>load balancing</li>
+<li>browser rendering engine</li>
+</ul>

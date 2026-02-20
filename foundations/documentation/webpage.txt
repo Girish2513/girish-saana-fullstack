@@ -1,0 +1,164 @@
+# How a URL Becomes a Webpage
+
+------------------------------------------------------------------------
+
+## Summary
+
+This document explains how a website loads when you type a URL in a
+browser.\
+It is written for beginners who want to understand what happens behind
+the scenes on the internet.
+
+You will learn how browsers, servers, DNS, and databases work together
+to display a webpage.
+
+------------------------------------------------------------------------
+
+## Introduction
+
+**Audience:** Beginners learning web development\
+**Goal:** Understand the request-response cycle\
+**Prerequisites:** Basic idea of browser and internet
+
+This guide explains the full journey from typing a URL to seeing a
+webpage.
+
+------------------------------------------------------------------------
+
+## Background
+
+Many people use the web daily but don't know how it works internally.
+Understanding this process helps developers:
+
+-   debug issues
+-   improve performance
+-   design systems
+-   prepare for interviews
+
+Web communication follows a structured client-server model.
+
+------------------------------------------------------------------------
+
+## Elaboration --- Step-by-Step Process
+
+### Step 1 --- URL Entered
+
+User types:
+
+    https://example.com
+
+Browser extracts:
+
+-   protocol
+-   domain
+-   path
+
+------------------------------------------------------------------------
+
+### Step 2 --- DNS Lookup
+
+Browser asks DNS server:
+
+> "What is the IP address of this domain?"
+
+DNS replies with an IP address.
+
+------------------------------------------------------------------------
+
+### Step 3 --- Server Connection
+
+Browser connects to that IP address using TCP + HTTPS.
+
+------------------------------------------------------------------------
+
+### Step 4 --- HTTP Request Sent
+
+``` http
+GET / HTTP/1.1
+Host: example.com
+```
+
+------------------------------------------------------------------------
+
+### Step 5 --- Server Processing
+
+Server may:
+
+-   run backend code
+-   query database
+-   call APIs
+
+------------------------------------------------------------------------
+
+### Step 6 --- Response Returned
+
+Server sends:
+
+-   HTML
+-   CSS
+-   JavaScript
+-   Images
+
+------------------------------------------------------------------------
+
+### Step 7 --- Browser Rendering
+
+Browser:
+
+-   builds DOM
+-   applies CSS
+-   runs JavaScript
+-   paints pixels
+
+User sees webpage.
+
+------------------------------------------------------------------------
+
+## Diagram --- Request Flow
+
+``` mermaid
+sequenceDiagram
+Browser->>DNS: Request IP
+DNS-->>Browser: IP address
+Browser->>Server: HTTP request
+Server-->>Browser: HTML response
+```
+
+------------------------------------------------------------------------
+
+## Diagram --- Architecture
+
+``` mermaid
+graph LR
+Browser --> Server
+Server --> Database
+Server --> API
+```
+
+------------------------------------------------------------------------
+
+## Mindmap
+
+![Mindmap](/girish-saana-fullstack/foundations/documentation/How%20a%20login%20system%20works.png)
+
+------------------------------------------------------------------------
+
+## Ending
+
+We learned how a URL becomes a webpage by traveling through multiple
+systems including DNS, servers, and databases.
+
+The internet works through structured communication between clients and
+servers.
+
+------------------------------------------------------------------------
+
+## What to Learn Next
+
+To deepen your understanding, explore:
+
+-   HTTP headers
+-   caching
+-   CDNs
+-   load balancing
+-   browser rendering engine
